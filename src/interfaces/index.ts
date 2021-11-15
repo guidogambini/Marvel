@@ -6,16 +6,16 @@ export interface Character {
     thumbnail: string;
     comics: Array<string>;
     series: Array<string>;
-    stories: Array<string>;
+    stories: Array<string>
 
 }
 
 
 export interface State {
 
-    allCharacters: Array<Character> | Array<any>;
-    renderingCharacters: Array<Character> | Array<any>;
+    allCharacters: Array<Character>;
+    renderingCharacters: Array<Character>;
     detail: Character | unknown;
-    favoriteCharacters: Array<Character> | Array<any>
+    favoriteCharacters: Array<Character>
 
 }

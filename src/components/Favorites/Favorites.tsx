@@ -6,6 +6,8 @@ import { Store } from "../../redux/reducer/";
 import { removeFavoriteCharacter, getFavs } from "../../redux/actions";
 import { MdDelete } from 'react-icons/md';
 import { IoHomeSharp } from "react-icons/io5";
+import { Character } from "../../interfaces";
+
 
 export default function Favorites() {
   
@@ -17,8 +19,7 @@ export default function Favorites() {
 }, [dispatch]
 )
 
-  const characters: any = useSelector((state: Store) => state.favoriteCharacters);
-
+  const characters: Array<Character> = useSelector((state: Store) => state.favoriteCharacters);
 
 
   return (
@@ -27,7 +28,7 @@ export default function Favorites() {
       <h2 className={styles.title}>Enjoy your collection</h2>
       <div className={styles.favs}>
         {
-          characters && characters.map((c:any) => (
+          characters && characters.map((c: Character) => (
             <section className={styles.fav} key={c.id} >
               <button onClick={() => dispatch(removeFavoriteCharacter(c.id))} className={styles.button}><MdDelete/></button>
               <Link to={`/character/${c.id}`}>

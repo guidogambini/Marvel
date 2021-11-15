@@ -7,10 +7,9 @@ import { Store } from "../../redux/reducer/";
 import { MdOutlineFavorite } from 'react-icons/md';
 import { Link } from "react-router-dom";
 import { IoHomeSharp } from "react-icons/io5";
+import { Character } from "../../interfaces";
 
-interface Props {
-  id: string;
-}
+
 
 const Detail: FC = () => {
 
@@ -27,7 +26,7 @@ const Detail: FC = () => {
 
   }, [dispatch]);
 
-  const character: any = useSelector((state: Store) => state.detail);
+  const character: Character = useSelector((state: Store) => state.detail);
   
   const handleFav = () => {
       dispatch(addFavoriteCharacter(character))
@@ -57,32 +56,33 @@ const Detail: FC = () => {
         <div className={styles.listCont}>
         <h3 className={styles.subTitle}>Comics</h3>
         <ul className={styles.lista}>
-            {character.comics?.map((comic:any) => 
-                <li className={styles.item}>{comic}</li>)
+            {character.comics?.map((comic: string) => 
+                <li className={styles.item}>{comic.split(',')[0]}</li>)
             }
         </ul>
         </div>
         <div className={styles.listCont}>
         <h3 className={styles.subTitle}>Series</h3>
         <ul className={styles.lista}>
-            {character.series?.map((series:any) => 
-                <li className={styles.item}>{series}</li>)
+            {character.series?.map((series: string) => 
+                <li className={styles.item}>{series.split(',')[0]}</li>)
             }
         </ul>
         </div>
         <div className={styles.listCont}>
         <h3 className={styles.subTitle}>Stories</h3>
         <ul className={styles.lista}>
-            {character.stories?.map((story:any) => 
-                <li className={styles.item}>{story}</li>)
+            {character.stories?.map((story: string) => 
+                <li className={styles.item}>{story.split(',')[0]}</li>)
             }
         </ul>
         </div>
       </div>
-      : <h1>Loading...</h1>
+      : <h1>Loading character...</h1>
     }
     </>
   );
 };
+
 
 export default Detail;

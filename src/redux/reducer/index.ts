@@ -22,11 +22,11 @@ export default function rootReducer(
             name: e.name,
             description: e.description,
             thumbnail: e.thumbnail.path + '.' + e.thumbnail.extension,
-            comics: e.comics.items.map((e: any) => e.name),
-            series: e.series.items.map((e: any) => e.name),
-            stories: e.stories.items.map((e: any) => e.name)
+            comics: e.comics.items.map((comic: any) => comic.name + ',' + comic.resourceURI.split('/')[comic.resourceURI.split('/').length-1]),
+            series: e.series.items.map((serie: any) => serie.name + ',' + serie.resourceURI.split('/')[serie.resourceURI.split('/').length-1]),
+            stories: e.stories.items.map((story: any) => story.name + ',' + story.resourceURI.split('/')[story.resourceURI.split('/').length-1])
           }
-      })
+        })
 
       return {
         ...state,
@@ -42,9 +42,9 @@ export default function rootReducer(
           name: e.name,
           description: e.description,
           thumbnail: e.thumbnail.path + '.' + e.thumbnail.extension,
-          comics: e.comics.items.map((e: any) => e.name),
-          series: e.series.items.map((e: any) => e.name),
-          stories: e.stories.items.map((e: any) => e.name)
+          comics: e.comics.items.map((comic: any) => comic.name + ',' + comic.resourceURI.split('/')[comic.resourceURI.split('/').length-1]),
+          series: e.series.items.map((serie: any) => serie.name + ',' + serie.resourceURI.split('/')[serie.resourceURI.split('/').length-1]),
+          stories: e.stories.items.map((story: any) => story.name + ',' + story.resourceURI.split('/')[story.resourceURI.split('/').length-1])
         }
     })
       
@@ -89,15 +89,15 @@ export default function rootReducer(
       };
 
     case "GET_NAME_CHARACTER":
-      const cleanCharacters = payload.map((e:any) => {
+      const cleanCharacters = payload.map((e: any) => {
         return {
           id: e.id,
           name: e.name,
           description: e.description,
           thumbnail: e.thumbnail.path + '.' + e.thumbnail.extension,
-          comics: e.comics.items.map((e:any) => e.name),
-          series: e.series.items.map((e:any) => e.name),
-          stories: e.stories.items.map((e:any) => e.name)
+          comics: e.comics.items.map((comic: any) => comic.name + ',' + comic.resourceURI.split('/')[comic.resourceURI.split('/').length-1]),
+          series: e.series.items.map((serie: any) => serie.name + ',' + serie.resourceURI.split('/')[serie.resourceURI.split('/').length-1]),
+          stories: e.stories.items.map((story: any) => story.name + ',' + story.resourceURI.split('/')[story.resourceURI.split('/').length-1])
         }
     })
       return {
@@ -106,29 +106,27 @@ export default function rootReducer(
       };
 
     case "FILTER_CHARACTERS":
-      if (action.payload.filterType === 'comics') {
+      const cleanFilter = payload.map((e: any) => {
         return {
-            ...state,
-            renderingCharacters: state.allCharacters.filter(charac => charac.comics.includes(action.payload.selected))
+          id: e.id,
+          name: e.name,
+          description: e.description,
+          thumbnail: e.thumbnail.path + '.' + e.thumbnail.extension,
+          comics: e.comics.items.map((comic: any) => comic.name + ',' + comic.resourceURI.split('/')[comic.resourceURI.split('/').length-1]),
+          series: e.series.items.map((serie: any) => serie.name + ',' + serie.resourceURI.split('/')[serie.resourceURI.split('/').length-1]),
+          stories: e.stories.items.map((story: any) => story.name + ',' + story.resourceURI.split('/')[story.resourceURI.split('/').length-1])
         }
-      }
-      else if (action.payload.filterType === 'series') {
-        return {
-            ...state,
-            renderingCharacters: state.allCharacters.filter(charac => charac.series.includes(action.payload.selected))
-        }
-      }
-      else {
-        return {
-            ...state,
-            renderingCharacters: state.allCharacters.filter(charac => charac.stories.includes(action.payload.selected))
-        }
-      }
+    })
+      return {
+        ...state,
+        renderingCharacters: cleanFilter,
+      };
       
 
     default:
       return state;
   }
 }
+
 
 export type Store = ReturnType<any>;

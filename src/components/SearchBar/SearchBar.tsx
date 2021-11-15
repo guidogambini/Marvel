@@ -1,6 +1,5 @@
-import React from 'react';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import styles from './SearchBar.module.css';
 import { IoSearch } from "react-icons/io5";
 import { getNameCharacter } from '../../redux/actions';
@@ -16,15 +15,15 @@ const SearchBar = () => {
 
     
 
-    function handleOnChange(e:any) {
+    function handleOnChange(e: React.FormEvent<HTMLInputElement>) {
 
         e.preventDefault();
-        setInput(e.target.value);
+        setInput(e.currentTarget.value);
 
     };
 
 
-    function handleOnSubmit(e:any) {
+    function handleOnSubmit(e: React.FormEvent<HTMLButtonElement>) {
 
         e.preventDefault();
         dispatch(getNameCharacter(input));
@@ -32,7 +31,7 @@ const SearchBar = () => {
 
     };
 
-    const handleOnKeyDown = (e:any) => {
+    const handleOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
 
         if (e.key === 'Enter') {
 
@@ -43,8 +42,6 @@ const SearchBar = () => {
         }
 
     };
-
-
 
 
     return (

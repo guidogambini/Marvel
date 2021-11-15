@@ -1,8 +1,7 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Card.module.css';
 import { MdOutlineFavorite, MdDelete } from 'react-icons/md';
-import { AiFillEdit } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
 import { addFavoriteCharacter, removeCharacter } from '../../redux/actions';
 import { Character } from '../../interfaces';
@@ -33,7 +32,6 @@ const Card: FC<Props> = ({ character }) => {
             </Link>
             <div className={styles.botones}>
                 <button className={styles.boton} onClick={handleDelete}><MdDelete/></button>
-                <button className={styles.boton} onClick={handleDelete}><AiFillEdit/></button>
             </div>
         </div>
     )

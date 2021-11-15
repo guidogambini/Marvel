@@ -126,10 +126,11 @@
     .comic {
         
         border-radius: 0.5rem;
-        width: 13rem;
-        height: 1rem;
+        width: 15rem;
+        height: 1.2rem;
         display: flex;
         outline: none;
+        margin-top: 0.5rem;
     }
     
     .comic:hover {

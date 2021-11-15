@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../NavBar/NavBar';
 import Card from '../Card/Card';
@@ -22,26 +22,26 @@ const Home = () => {
     }, [dispatch]
     )
 
-    const characters: any = useSelector(
+    const characters: Array<Character> = useSelector(
       (state: Store) => state.renderingCharacters
     );
 
-    const allCharacters: any = useSelector(
+    const allCharacters: Array<Character> = useSelector(
       (state: Store) => state.allCharacters
     );
     
     
 
-    function handleOnClick(e:any) {
+    function handleOnClick(e: React.FormEvent<HTMLButtonElement>) {
 
         e.preventDefault();
         dispatch(getAllCharacters());
 
     };
 
-    function handleOnSelector(e:any) {
+    function handleOnSelector(e: React.FormEvent<HTMLSelectElement>) {
 
-        dispatch(filterBy(e.target.name, e.target.value));
+        dispatch(filterBy(e.currentTarget.name, e.currentTarget.value));
 
     };
 
@@ -56,7 +56,7 @@ const Home = () => {
                     <Link to='/favs'><button className={styles.boton2}>Favorites ❤</button></Link>
                 </div>
                 <div className={styles.buttons1}>
-                    <button onClick={handleOnClick} className={styles.boton1} >All characters</button>
+                    <button onClick={handleOnClick} className={styles.boton1} >All characters ⚡</button>
                 </div>
                 <div className={styles.charactersearch}>
                     <SearchBar />
@@ -67,7 +67,7 @@ const Home = () => {
                 <optgroup className={styles.options}>
                     <option hidden disabled selected>Stories...</option>
                     {
-                        allCharacters.map((e:any) => e.stories.map((story:any) => <option value={story}>{story}</option>))
+                        allCharacters.map((e: Character) => e.stories.map((story: string) => <option value={story.split(',')[1]}>{story.split(',')[0]}</option>))
                     }
                 </optgroup>    
                 </select>
@@ -76,7 +76,7 @@ const Home = () => {
                 <optgroup className={styles.options}>
                     <option hidden disabled selected>Series...</option>
                     {
-                        allCharacters.map((e:any) => e.series.map((serie:any) => <option value={serie}>{serie}</option>))
+                        allCharacters.map((e: Character) => e.series.map((serie: string) => <option value={serie.split(',')[1]}>{serie.split(',')[0]}</option>))
                     }
                 </optgroup>
                 </select>

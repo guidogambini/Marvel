@@ -4,17 +4,17 @@ import { Dispatch } from "redux";
 import Swal from 'sweetalert2';
 
 interface allCharacters {
+
   type: string;
   payload: Array<Character> | Character;
-}
 
-interface Detail {
-  type: string;
 }
 
 interface Name {
+
   type: string;
   payload: Character;
+
 }
 
 export const getAllCharacters = () => {
@@ -56,7 +56,7 @@ export const addFavoriteCharacter = (payload: Character) => {
       confirmButtonText: 'Go!'
     })
   }
-  else if (!inFavs.find((e:Character) => e.id === payload.id)) {
+  else if (!inFavs.find((e: Character) => e.id === payload.id)) {
     inFavs.push(payload);
     localStorage.setItem("favs", JSON.stringify(inFavs));
     Swal.fire({
@@ -116,13 +116,14 @@ export const getNameCharacter = (name: string) => {
   };
 };
 
-export const filterBy = (filterType: string, selected: string) => {
-  return {
-    type: 'FILTER_CHARACTERS',
-    payload: {
-        filterType,
-        selected
-    },
+export const filterBy = (filterType: string, id: string) => {
+  return async (dispatch: Dispatch<Name>): Promise<any> => {
+    
+    const json = await axios.get(`https://gateway.marvel.com/v1/public/${filterType}/${id}/characters?ts=1&apikey=af003a87e2afdf0c898f4a9072277b2c&hash=0b11f870dafd1bc3a23bb2cc82c21216`);
+    return dispatch({
+      type: 'FILTER_CHARACTERS',
+      payload: json.data.data.results
+    });
   };
 };
 
