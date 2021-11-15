@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Nanum+Gothic&display=swap');
+
+.container {
+
+    display: flex;
+
+    justify-content: space-evenly;
+
+    align-items: stretch;
+    
+    width: 18rem;
+
+    height: 18rem;
+
+    margin: 1.04rem;
+
+    background: black;
+
+    transition: background-color 0.6s;
+
+}
+
+.name {
+    font-family: 'Merriweather', serif;
+    display: flex;
+    justify-content: center;
+    font-size: 23px;
+    color: rgb(179, 6, 6);
+}
+
+
+.link {
+    text-decoration: none;
+}
+
+.container:hover {
+    background-color: white;
+}
+ 
+
+
+.image {
+    display: flex;
+    justify-content: center;
+    width: 13rem;
+    height: 13rem;
+    object-fit: cover;
+    border-radius: 2rem;
+    transition: border-radius 0.7s;
+}
+
+.image:hover {
+    border-radius: 0rem; 
+}
+
+.boton {
+    background-color: white;
+    height: 2rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.boton:hover {
+    background-color: black;
+    color: rgb(179, 6, 6);
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+    
+}

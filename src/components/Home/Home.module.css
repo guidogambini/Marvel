@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@1,200&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Varela+Round");
+
+
+.title {
+
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'Azeret Mono', monospace;
+    font-size: 30px;
+    color: whitesmoke;
+}
+
+.buttons {
+    display: flex;
+    justify-content:stretch;
+    margin-top: 0.5em;
+}
+
+.buttons1 {
+	text-transform: uppercase;
+	text-decoration: none;
+	background: none;
+	padding: 2px;
+	border-radius: 8px;
+    display: flex;
+    align-items: center;
+	border: none;
+	transition: all 0.4s ease 0s;
+    cursor: pointer;
+    width: 10em;
+}
+
+.buttons2 {
+	text-transform: uppercase;
+	text-decoration: none;
+	background: none;
+	padding: 10px;
+	border-radius: 8px;
+	display: inline-block;
+	border: none;
+	transition: all 0.4s ease 0s;
+    cursor: pointer;
+}
+
+.charactersearch {
+    text-transform: uppercase;
+	text-decoration: none;
+	background: none;
+	padding: 10px;
+	border-radius: 8px;
+	display: inline-block;
+	border: none;
+	transition: all 0.4s ease 0s;
+    cursor: pointer;
+    margin-left: 20.3em;
+}
+
+.boton1 {
+    
+    letter-spacing: 0.1rem;
+    font-family: 'Anton', sans-serif;
+    background-color: black;
+    border-radius: 1rem;
+    cursor: pointer; 
+    font-size: 20px;
+    width: 15rem;
+    height: 3.5rem;
+    color: white;
+    
+}
+
+.boton2 {
+    letter-spacing: 0.1rem;
+    background-color: black;
+    border: none;
+    cursor: pointer; 
+    font-weight: 200;
+    font-size: 20px;
+    width: 15rem;
+    height: 3.5rem;
+    color: white;
+    font-family: 'Anton', sans-serif;
+    border-radius: 1rem;
+}
+
+.boton1:hover, .boton2:hover {
+    background-color: white;
+    color: black;
+    transition: 0.55s;
+}
+
+.characters {
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 5em;
+    margin-top: 2em;
+}
+
+.navegador {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    width: 1200px;
+    margin-left: 3.9em;
+    height: 35px;
+}
+
+
+.stories, .series {
+    border-radius: 0.5rem;
+    width: 13rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    outline: none;
+}
+
+.stories:hover, .series:hover {
+    background-color: rgba(255, 255, 255, 0.486);
+    color: black;
+    transition: 0.25s;
+}
+
+.options {
+    font-family: 'Merriweather', serif;
+    font-weight: bolder;
+    background: rgba(255, 255, 255, 0.178);
+}
+
+.copy {
+    color: blanchedalmond;
+    margin-left: 41.7%;
+    font-size: 13px;
+}
+
+
+@media screen and (max-width: 800px) {
+
+
+    .mainContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30rem;
+    }
+
+    .title {
+
+        display: flex;
+        justify-content: flex-start;
+        font-family: 'Azeret Mono', monospace;
+        font-size: 30px;
+        color: whitesmoke;
+    }
+    
+    .buttons {
+        display: flex;
+        align-items: center;
+    }
+    
+    .buttons1 {
+        text-transform: uppercase;
+        text-decoration: none;
+        background: none;
+        padding: 1rem;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        border: none;
+        transition: all 0.4s ease 0s;
+        cursor: pointer;
+        width: 10em;
+    }
+    
+    .buttons2 {
+        text-transform: uppercase;
+        text-decoration: none;
+        background: none;
+        padding: 1rem;
+        border-radius: 8px;
+        display: inline-block;
+        border: none;
+        transition: all 0.4s ease 0s;
+        cursor: pointer;
+    }
+    
+    .charactersearch {
+        text-transform: uppercase;
+        text-decoration: none;
+        background: none;
+        padding: 10px;
+        border-radius: 8px;
+        display: inline-block;
+        border: none;
+        transition: all 0.4s ease 0s;
+        cursor: pointer;
+        margin-left: 20.3em;
+    }
+    
+    .boton1 {
+        
+        letter-spacing: 0.1rem;
+        font-family: 'Anton', sans-serif;
+        background-color: black;
+        border-radius: 1rem;
+        cursor: pointer; 
+        font-size: 20px;
+        width: 8rem;
+        height: 3.5rem;
+        color: white;
+        
+    }
+    
+    .boton2 {
+        letter-spacing: 0.1rem;
+        background-color: black;
+        border: none;
+        cursor: pointer; 
+        font-weight: 200;
+        font-size: 20px;
+        width: 8rem;
+        height: 3.5rem;
+        color: white;
+        font-family: 'Anton', sans-serif;
+        border-radius: 1rem;
+    }
+    
+    .boton1:hover, .boton2:hover {
+        background-color: white;
+        color: black;
+        transition: 0.55s;
+    }
+    
+    .characters {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 5em;
+        margin-top: 2em;
+    }
+    
+    .navegador {
+        display: flex;
+        align-items: center;
+        margin: 30px;
+        height: 35px;
+        width: 100%;
+    }
+    
+    
+    .stories, .series {
+        border-radius: 0.5rem;
+        width: 13rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        outline: none;
+    }
+    
+    .stories:hover, .series:hover {
+        background-color: rgba(255, 255, 255, 0.486);
+        color: black;
+        transition: 0.25s;
+    }
+    
+    .options {
+        font-family: 'Merriweather', serif;
+        font-weight: bolder;
+        background: rgba(255, 255, 255, 0.178);
+    }
+    
+    .copy {
+        display: none;
+    }
+
+}
+
+
+@media screen and (max-width: 500px) {
+
+
+    .mainContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3rem;
+    }
+
+    .title {
+
+        display: flex;
+        justify-content: center;
+        font-family: 'Azeret Mono', monospace;
+        font-size: 30px;
+        color: whitesmoke;
+    }
+    
+    .buttons {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 2rem;
+        width: 100vw;
+
+    }
+    
+    .buttons1 {
+
+        text-transform: uppercase;
+        text-decoration: none;
+        background: none;
+        padding: 2px;
+        border-radius: 8px;
+        display: flex;
+        border: none;
+        transition: all 0.4s ease 0s;
+        cursor: pointer;
+        width: 10em;
+
+    }
+    
+    .buttons2 {
+        text-transform: uppercase;
+        text-decoration: none;
+        background: none;
+        padding: 10px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        border: none;
+        transition: all 0.4s ease 0s;
+        cursor: pointer;
+        width: 10em;
+    }
+    
+    .charactersearch {
+        text-transform: uppercase;
+        text-decoration: none;
+        background: none;
+        display: flex;
+        justify-content: center;
+        border: none;
+        transition: all 0.4s ease 0s;
+        cursor: pointer;
+    }
+    
+    
+    .boton1 {
+        
+        letter-spacing: 0.1rem;
+        font-family: 'Anton', sans-serif;
+        background-color: black;
+        border-radius: 1rem;
+        cursor: pointer; 
+        font-size: 20px;
+        width: 15rem;
+        height: 3.5rem;
+        color: white;
+        
+    }
+    
+    .boton2 {
+        letter-spacing: 0.1rem;
+        background-color: black;
+        border: none;
+        cursor: pointer; 
+        font-weight: 200;
+        font-size: 20px;
+        width: 15rem;
+        height: 3.5rem;
+        color: white;
+        font-family: 'Anton', sans-serif;
+        border-radius: 1rem;
+    }
+    
+    .boton1:hover, .boton2:hover {
+        background-color: white;
+        color: black;
+        transition: 0.55s;
+    }
+    
+    .characters {
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+    
+    .navegador {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+        height: 35px;
+        margin-left: 0rem;
+    }
+    
+    
+    .stories, .series {
+        border-radius: 0.5rem;
+        width: 13rem;
+        height: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        outline: none;
+    }
+    
+    .stories:hover, .series:hover {
+        background-color: rgba(255, 255, 255, 0.486);
+        color: black;
+        transition: 0.25s;
+    }
+    
+    .options {
+        font-family: 'Merriweather', serif;
+        font-weight: bolder;
+        background: rgba(255, 255, 255, 0.178);
+    }
+    
+    .copy {
+        display: none;
+    }
+
+}

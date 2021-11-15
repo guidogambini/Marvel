@@ -1,0 +1,105 @@
+.input {
+    background-color: black;
+    border: none;
+    font-weight: 600;
+    width: 20rem;
+    height: 2.5rem;
+    color: white;
+}
+
+.boton {
+    background-color: black;
+    border: none;
+    cursor: pointer; 
+    font-weight: 600;
+    width: 5rem;
+    height: 2.6rem;
+    color: white;
+    margin-left: 0.4em;
+}
+
+.input:hover, .boton:hover {
+    background-color: rgba(255, 255, 255, 0.486);
+    color: black;
+    transition: 0.25s;
+}
+
+
+@media screen and (max-width: 800px) {
+
+    .contenedor {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -19rem;
+        margin-top: 0.2rem;
+        
+    }
+
+    .input {
+        background-color: black;
+        border: none;
+        font-weight: 600;
+        width: 10rem;
+        height: 2.5rem;
+        color: white;
+    }
+    
+    .boton {
+        background-color: black;
+        border: none;
+        cursor: pointer; 
+        font-weight: 600;
+        width: 5rem;
+        height: 2.6rem;
+        color: white;
+        margin-left: 0.3em;
+    }
+    
+    .input:hover, .boton:hover {
+        background-color: rgba(255, 255, 255, 0.486);
+        color: black;
+        transition: 0.25s;
+    }
+
+}
+
+
+@media screen and (max-width: 500px) {
+
+    .contenedor {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -20rem;
+        margin-top: 3rem;
+        
+    }
+
+    .input {
+        background-color: black;
+        border: none;
+        font-weight: 600;
+        width: 10rem;
+        height: 2.5rem;
+        color: white;
+    }
+    
+    .boton {
+        background-color: black;
+        border: none;
+        cursor: pointer; 
+        font-weight: 600;
+        width: 5rem;
+        height: 2.6rem;
+        color: white;
+        margin-left: 0.3em;
+    }
+    
+    .input:hover, .boton:hover {
+        background-color: rgba(255, 255, 255, 0.486);
+        color: black;
+        transition: 0.25s;
+    }
+
+}
