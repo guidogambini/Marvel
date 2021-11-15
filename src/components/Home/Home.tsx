@@ -53,7 +53,7 @@ const Home = () => {
         <div className={styles.mainContainer}>
             <div className={styles.buttons}>
                 <div className={styles.buttons2}>
-                    <Link to='/favs'><button className={styles.boton2}>Your favorites!</button></Link>
+                    <Link to='/favs'><button className={styles.boton2}>Favorites ❤</button></Link>
                 </div>
                 <div className={styles.buttons1}>
                     <button onClick={handleOnClick} className={styles.boton1} >All characters</button>
