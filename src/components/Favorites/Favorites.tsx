@@ -25,7 +25,7 @@ export default function Favorites() {
   return (
     <div className={styles.mainContainer}>
       <Link to='/' className={styles.home}><IoHomeSharp /></Link>
-      <h2 className={styles.title}>Enjoy your collection</h2>
+      <h2 className={styles.title}>{characters.length ? 'Enjoy your collection' : 'Look for new favorite characters!'}</h2>
       <div className={styles.favs}>
         {
           characters && characters.map((c: Character) => (
